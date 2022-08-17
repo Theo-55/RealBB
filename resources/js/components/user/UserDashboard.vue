@@ -1,6 +1,6 @@
 <template>
     <div id="header-content">
-            <user-nav></user-nav>
+            <user-nav :User="{ user }"></user-nav>
     </div>
 
 </template>
@@ -9,10 +9,14 @@
 import UserNav from '/resources/js/components/user/UserNav.vue'
 export default {
     mounted() {
-        console.log('dashboard mounted');
+        console.log(this.user);
     },
     components: {
         UserNav
+    },
+    props: {
+        User:
     }
+
 }
 </script>

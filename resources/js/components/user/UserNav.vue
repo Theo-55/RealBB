@@ -9,16 +9,16 @@
                 <a href="#responsive-header" class="block mt-3 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
                     Workouts
                 </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
+                <a @click="goToNotes" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
                     Notes
                 </a>
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white">
                     Meals
                 </a>
             </div>
-            <div class="block flex-grow lg:flex lg:items-center lg:w-auto">
-                <span>{{ User }}</span>
-            </div>
+<!--            <div class="block flex-grow lg:flex lg:items-center lg:w-auto">-->
+<!--                <span>{{user}}</span>-->
+<!--            </div>-->
             <div>
                 <div class="block ">
                     <button class="flex items-center px-4 py-2 border rounded text-black-400 border-black-400 hover:text-white hover:border-white">
@@ -32,11 +32,14 @@
 <script>
 
 export default {
-    mounted() {
-      console.log(this.User);
+    props: ['user'],
+    methods:{
+        goToNotes(){
+
+        }
     },
-    props: {
-        User: String
+    mounted() {
+        console.log(this.user);
     }
 }
 </script>

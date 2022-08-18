@@ -6,10 +6,10 @@
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto ">
             <div class="text-sm lg:flex-grow lg:items-center">
-                <a href="#responsive-header" class="block mt-3 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
+                <a @click="gotoWorkouts" class="block mt-3 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
                     Workouts
                 </a>
-                <a @click="goToNotes" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
+                <a @click="" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
                     Notes
                 </a>
                 <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white">
@@ -34,8 +34,8 @@
 export default {
     props: ['user'],
     methods:{
-        goToNotes(){
-
+        gotoWorkouts() {
+            window.location.href = '/workouts';
         }
     },
     mounted() {

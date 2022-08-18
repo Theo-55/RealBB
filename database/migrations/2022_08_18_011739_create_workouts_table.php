@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('workouts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->String('user');
-            $table->String('title');
-            $table->String('quality');
-            $table->String('muscle_groups');
-            $table->String('exercise_lists');
-            $table->String('notes');
+            $table->date('date');
+            $table->String('muscle_group');
+            $table->String('workouts');
         });
     }
 
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('workouts');
     }
 };

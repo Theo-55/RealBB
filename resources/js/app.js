@@ -21,6 +21,9 @@ app.component('example-component', ExampleComponent);
 import UserDashboard from './components/user/UserDashboard.vue';
 app.component('user-dashboard', UserDashboard);
 
+import WorkoutIndex from './components/workouts/index.vue';
+app.component('workout-index', WorkoutIndex);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

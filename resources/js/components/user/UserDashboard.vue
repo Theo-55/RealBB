@@ -27,6 +27,10 @@
             </div>
         </div>
 
+        <div>
+            <footer></footer>
+        </div>
+
     </div>
 
 
@@ -35,10 +39,12 @@
 <script>
 
 import UserNav from '/resources/js/components/user/UserNav.vue'
+import Footer from '/resources/js/components/user/Footer.vue'
 export default {
     props: ['user'],
     components: {
-        UserNav
+        UserNav,
+        Footer
     },
     mounted() {
         console.log(this.user)

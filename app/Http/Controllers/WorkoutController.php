@@ -9,6 +9,6 @@ class WorkoutController extends Controller
     //
     public function index()
     {
-        dd('got here');
+        return view('workouts.index');
     }
 }

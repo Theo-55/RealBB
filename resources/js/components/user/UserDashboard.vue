@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div id="header-content">
+        <div id="header-content" class="h-20 my-1">
             <user-nav user="{{ user }}"></user-nav>
         </div>
-        <div class="grid grid-cols-1 text-center">
+        <div class="grid grid-cols-1 text-center h-4/5">
             <div class="my-3">
                 <div class="container mx-auto px-6 py-15">
                     <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
@@ -26,9 +26,8 @@
                 </div>
             </div>
         </div>
-
         <div>
-            <footer></footer>
+            <UserFooter></UserFooter>
         </div>
 
     </div>
@@ -39,12 +38,10 @@
 <script>
 
 import UserNav from '/resources/js/components/user/UserNav.vue'
-import Footer from '/resources/js/components/user/Footer.vue'
 export default {
     props: ['user'],
     components: {
         UserNav,
-        Footer
     },
     mounted() {
         console.log(this.user)

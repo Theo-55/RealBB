@@ -1,9 +1,16 @@
 <template>
     <div>
-        <user-nav></user-nav>
-            <div class="content-center">
-                <h1>welcome to da dashboard</h1>
-            </div>
+        <div>
+            <user-nav></user-nav>
+        </div>
+        <div class=" mx-auto pt-6 " id="workout-create-button">
+            <button type="button" @click="goToCreate" class=" py-3 px-5 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-gray-500 dark:hover:bg-gray-700 dark:focus:ring-gray-800">create</button>
+        </div>
+        <div>
+            <!-- this section for the workout table, adding after create is completed -->
+        </div>
+
+
     </div>
 
 
@@ -11,6 +18,12 @@
 <script>
 import UserNav from "../user/UserNav.vue";
 export default {
-    components: {UserNav}
+    components: {UserNav},
+
+    methods: {
+        goToCreate(){
+            window.location.href = '/workouts/create';
+        }
+    }
 }
 </script>

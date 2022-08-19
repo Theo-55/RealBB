@@ -11,4 +11,9 @@ class WorkoutController extends Controller
     {
         return view('workouts.index');
     }
+
+    public function create()
+    {
+        return view('workouts.create');
+    }
 }

@@ -21,8 +21,14 @@ app.component('example-component', ExampleComponent);
 import UserDashboard from './components/user/UserDashboard.vue';
 app.component('user-dashboard', UserDashboard);
 
+import UserFooter from './components/user/UserFooter.vue';
+app.component('user-footer', UserFooter);
+
 import WorkoutIndex from './components/workouts/index.vue';
 app.component('workout-index', WorkoutIndex);
+
+import WorkoutSave from './components/workouts/save.vue';
+app.component('workout-create', WorkoutSave);
 
 /**
  * The following block of code may be used to automatically register your

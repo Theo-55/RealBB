@@ -4,4 +4,6 @@
 
         <user-dashboard user="{{$user}}"></user-dashboard>
 
+        <user-footer></user-footer>
+
 @endsection

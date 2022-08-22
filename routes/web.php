@@ -25,4 +25,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::controller(WorkoutController::class)->group(function () {
     Route::get('/workouts', 'index');
     Route::get('/workouts/create', 'create');
+    Route::post('/workouts/create/save', 'save');
 });

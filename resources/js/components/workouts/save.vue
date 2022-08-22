@@ -2,71 +2,47 @@
     <div>
         <user-nav></user-nav>
     </div>
-    <div id="workout-create-form" class="mx-auto relative top-50">
-        <form class="w-full max-w-lg my-8 mx-auto bg-gray-400 rounded">
-            <div class="w-full h-5 text-slate-200">
-
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                        Workout
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
-                    <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+    <div class="relative mt-24 bg-gray-500 w-3/4 mx-auto h-full rounded">
+        <form>
+            <div class="grid gap-6 mb-6 md:grid-cols-3 ">
+                <div>
+                    <label for="first_name" class="block mb-2 text-sm font-medium text-white">Exercise</label>
+                    <input type="text" id="first_name" @v-model="formData.name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
                 </div>
-                <div class="w-full md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                        Sets
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+                <div>
+                    <label for="first_name" class="block mb-2 text-sm font-medium text-white">Sets</label>
+                    <input type="number" id="first_name" @v-model="formData.sets" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+                </div>
+                <div>
+                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Reps</label>
+                    <input type="number" id="reps" @v-model="formData.reps" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
                 </div>
             </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                        Password
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
-                    <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
-                </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-2">
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-                        City
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque">
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0 p-1.5">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                        State
-                    </label>
-                    <div class="relative">
-                        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                            <option>New Mexico</option>
-                            <option>Missouri</option>
-                            <option>Texas</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-                        Zip
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
-                </div>
-            </div>
+            <button type="submit" @v-model="sendExercise" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
         </form>
+
     </div>
 </template>
 <script>
 import UserNav from "../user/UserNav.vue";
 
 export default{
+    data() {
+        return {
+            formData: {
+                name: String,
+                sets: Number,
+                reps: Number
+            }
+        }
+    },
+    methods: {
+         sendExercise() {
+             axios.post("/workouts/create/save", this.formData)
+
+
+         }
+    },
     components: {
         UserNav
     }

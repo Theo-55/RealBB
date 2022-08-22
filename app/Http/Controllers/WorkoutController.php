@@ -16,4 +16,10 @@ class WorkoutController extends Controller
     {
         return view('workouts.create');
     }
+
+    public function save(Request $request)
+    {
+        $input = $request->collect();
+        dd($input);
+    }
 }

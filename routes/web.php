@@ -16,7 +16,7 @@ use App\Http\Controllers\WorkoutController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.register');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

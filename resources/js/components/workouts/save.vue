@@ -15,8 +15,8 @@
                 </div>
                 <div>
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Duration</label>
-                    <select v-model="formData.entries.duration" class="form-select appearance-none block w-2/3 px-3 py-1.5 text-base font-normal text-white bg-gray-600 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-600 focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                        <option selected>Select Hours</option>
+                    <select class="form-select appearance-none block w-2/3 px-3 py-1.5 text-base font-normal text-white bg-gray-600 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-600 focus:border-blue-600 focus:outline-none" v-model="formData.entries.duration" aria-label="Default select example">
+                        <option selected >Select Hours</option>
                         <option value="1">1/2</option>
                         <option value="2">1</option>
                         <option value="3">1.5</option>
@@ -36,16 +36,11 @@ export default{
     data() {
         return {
             formData: {
-                errors: {},
                 entries: {
-                    exercise: "",
-                    sets: Number,
-                    reps: Number,
-                    date: Date,
+                    date: "",
                     group: "",
-                    duration: Number
+                    duration: ""
                 }
-
             }
         }
     },

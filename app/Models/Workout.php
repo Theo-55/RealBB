@@ -9,15 +9,15 @@ class Workout extends Model
 {
     use HasFactory;
 
-    protected $attributes = ([
+    protected $fillable = ([
         'date',
         'muscle_group',
-        'duration'
+        'duration_hrs'
     ]);
 
-    public function __construct(array $attributes = [])
+    public function __construct(array $fillable = [])
     {
-        parent::__construct($attributes);
+        parent::__construct($fillable);
     }
 
     public function exercises()

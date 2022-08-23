@@ -16,7 +16,7 @@ use App\Http\Controllers\WorkoutController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.register');
+    return view('auth.login');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -26,4 +26,5 @@ Route::controller(WorkoutController::class)->group(function () {
     Route::get('/workouts', 'index');
     Route::get('/workouts/create', 'create');
     Route::post('/workouts/create/save', 'save');
+    Route::get('/workouts/capture', 'getAll');
 });

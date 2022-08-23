@@ -8,7 +8,7 @@
         </div>
         <div class="relative pt-5 w-50 mx-auto">
             <!-- this section for the workout table, adding after create is completed -->
-            <workout></workout>
+            <workout></workout>x
         </div>
     </div>
 

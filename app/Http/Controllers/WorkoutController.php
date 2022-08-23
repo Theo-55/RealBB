@@ -32,4 +32,9 @@ class WorkoutController extends Controller
             return redirect('/workouts');
     }
 
+    public function getAll()
+    {
+        return response()->json(Workout::all());
+    }
+
 }

@@ -6,12 +6,13 @@
 
     >
         <h2 class="space-y-1 text-2xl font-bold leading-none text-gray-900">
-        <span class="block text-sm text-blue-700">hello </span
-        ><span class="block">{{ Workout.date }}</span>
+        <span class="block text-sm text-blue-700">{{ Workout.date }}</span>
+            <span class="block">{{ Workout.muscle_group }}</span>
         </h2>
-        <p>
+        <p>You're workout lasted  {{Workout.duration_hrs}}  hours</p>
 
-        </p>
+        <button class="block rounded w-1/3 bg-gray-500 h-5 text-white text-sm ">Update </button>
+        <button class="block inline rounded w-1/3 bg-gray-500 text-white">Delete</button>
     </div>
 </template>
 <script>
@@ -24,12 +25,11 @@ export default {
     methods: {
             getWorkouts() {
                 axios.get('/workouts/capture').then(response => {
-                    this.workouts = response.data.workout;
+                    this.workouts = response.data;
                 });
             }
     },
-
-    beforeMount(){
+    mounted(){
         this.getWorkouts()
     }
 }

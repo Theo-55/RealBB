@@ -9,6 +9,13 @@ class Exercise extends Model
 {
     use HasFactory;
 
+    protected $fillable = ([
+        'name',
+        'sets',
+        'reps',
+        'workout_id'
+    ]);
+
     public function create()
     {
 

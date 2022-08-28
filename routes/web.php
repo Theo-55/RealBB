@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WorkoutController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\WorkoutController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.register');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -27,4 +28,8 @@ Route::controller(WorkoutController::class)->group(function () {
     Route::get('/workouts/create', 'create');
     Route::post('/workouts/create/save', 'save');
     Route::get('/workouts/capture', 'getAll');
+});
+
+Route::controller(\App\Http\Controllers\SettingsController::class)->group(function() {
+   route::get('/settings', 'index');
 });

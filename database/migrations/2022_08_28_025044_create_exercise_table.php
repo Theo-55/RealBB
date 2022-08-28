@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Workout;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->String('name');
             $table->String('sets');
             $table->Integer('reps');
-
+            $table->foreignIdFor(Workout::class);
         });
     }
 

@@ -547,6 +547,7 @@ class ComposerStaticInit9499db0020ded50044fcbc2f7dedcdc9
         'App\\Http\\Controllers\\ExerciseController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExerciseController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\NotesController' => __DIR__ . '/../..' . '/app/Http/Controllers/NotesController.php',
+        'App\\Http\\Controllers\\SettingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SettingsController.php',
         'App\\Http\\Controllers\\WorkoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/WorkoutController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

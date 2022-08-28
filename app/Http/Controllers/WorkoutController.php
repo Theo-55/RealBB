@@ -27,6 +27,8 @@ class WorkoutController extends Controller
                 'duration_hrs' => $request->input('duration')
             ));
 
+            //method places here to go through each exercise sent over from vue to be iterated and created with the workout id
+
             $workout = $workout->save();
 
             return redirect('/workouts');

@@ -10,6 +10,7 @@ class Workout extends Model
     use HasFactory;
 
     protected $fillable = ([
+        'user_id',
         'date',
         'muscle_group',
         'duration_hrs'

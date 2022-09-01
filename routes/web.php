@@ -17,7 +17,7 @@ use App\Http\Controllers\SettingsController;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.register');
+    return view('auth.login');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -28,6 +28,7 @@ Route::controller(WorkoutController::class)->group(function () {
     Route::get('/workouts/create', 'create');
     Route::post('/workouts/create/save', 'save');
     Route::get('/workouts/capture', 'getAll');
+    Route::delete('/workouts/delete', 'delete');
 });
 
 Route::controller(\App\Http\Controllers\SettingsController::class)->group(function() {

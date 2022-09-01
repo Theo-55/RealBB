@@ -17,10 +17,11 @@ return new class extends Migration
         Schema::create('exercise', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('workout_id');
             $table->String('name');
             $table->String('sets');
             $table->Integer('reps');
-            $table->foreignIdFor(Workout::class);
+            $table->foreign('workout_id')->references('id')->on('workouts')->onDelete('cascade');
         });
     }
 

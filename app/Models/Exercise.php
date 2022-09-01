@@ -16,9 +16,9 @@ class Exercise extends Model
         'workout_id'
     ]);
 
-    public function create()
+    public function __construct(array $fillable = [])
     {
-
+        parent::__construct($fillable);
     }
     public function workout()
     {

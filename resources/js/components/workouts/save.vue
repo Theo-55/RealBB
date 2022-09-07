@@ -24,37 +24,28 @@
                         <option value="5">2.5</option>
                     </select>
                 </div>
-                <div>
-                    <label for="exercise" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Exercise</label>
-                    <input type="text" id="reps" v-model="formData.exercise.name"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+
+                <div v-for="(exercise, counter) in formData.exercises" v-bind:key="counter" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+
+                            <exercise-row></exercise-row>
+
+<!--                    <label for="exercise" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Exercise</label>-->
+<!--                    <input type="text" id="reps" v-model="formData.exercises.name"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">-->
+
+<!--                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sets</label>-->
+<!--                    <input type="text" id="reps" v-model="formData.exercises.sets" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">-->
+
+<!--                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Reps</label>-->
+<!--                    <input type="text" id="reps" v-model="formData.exercises.reps" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">-->
                 </div>
-                <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sets</label>
-                    <input type="text" id="reps" v-model="formData.exercise.sets" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
-                </div>
-                <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Reps</label>
-                    <input type="text" id="reps" v-model="formData.exercise.reps" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
-                </div>
-                <div>
-                    <label for="exercise" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Exercise</label>
-                    <input type="text" id="reps" v-model="formData.exercise.name"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
-                </div>
-                <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sets</label>
-                    <input type="text" id="reps" v-model="formData.exercise.sets" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
-                </div>
-                <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Reps</label>
-                    <input type="text" id="reps" v-model="formData.exercise.reps" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
-                </div>
-                <button @click="sendExercise" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
-                <button @click="addRow" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Excercise</button>
             </div>
+        <button @click="sendExercise" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
+        <button @click="addRow" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Exercise</button>
     </div>
 </template>
 <script>
 import UserNav from "../user/UserNav.vue";
+import ExerciseRow from "../workouts/partials/ExerciseRow.vue";
 
 export default{
     data() {
@@ -65,11 +56,11 @@ export default{
                     group: "",
                     duration: ""
                 },
-                exercise: {
+                exercises: [{
                     name: "",
                     sets: "",
                     reps: ""
-                }
+                }]
             }
         }
     },
@@ -87,7 +78,7 @@ export default{
          },
 
         addRow() {
-            this.formData.exercise.push({
+            this.formData.exercises.push({
                 name: "",
                 sets: "",
                 reps: ""
@@ -95,7 +86,8 @@ export default{
         }
     },
     components: {
-        UserNav
+        UserNav,
+        ExerciseRow
     }
 }
 </script>

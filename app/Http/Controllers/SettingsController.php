@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 class SettingsController extends Controller
 {
     //
-
     public function index()
     {
-        return view('settings');
+        $user = auth()->user();
+        return view('settings', [
+            'user' => $user->name
+        ]);
     }
 }

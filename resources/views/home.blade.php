@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <user-dashboard user="{{$user}}"></user-dashboard>
+        <user-dashboard user="{{$user}}" workouts="{{$workouts}}"></user-dashboard>
 
         <user-footer></user-footer>
 

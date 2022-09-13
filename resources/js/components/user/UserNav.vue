@@ -38,7 +38,7 @@ export default {
             window.location.href = '/home';
         },
         goToSettings(){
-            window.location.href = '/settings'
+            window.location.href = '/settings';
         }
     },
     mounted() {

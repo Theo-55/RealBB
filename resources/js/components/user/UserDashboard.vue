@@ -39,7 +39,7 @@
 
 import UserNav from '/resources/js/components/user/UserNav.vue'
 export default {
-    props: ['user'],
+    props: ['user', 'workouts'],
     components: {
         UserNav,
     },

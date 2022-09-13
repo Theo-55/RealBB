@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\SettingsController;
 use App\Http\Controllers\WorkoutController;
-use App\Http\Controllers\SettingsController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,7 @@ Route::controller(WorkoutController::class)->group(function () {
     Route::delete('/workouts/delete', 'delete');
 });
 
-Route::controller(\App\Http\Controllers\SettingsController::class)->group(function() {
+Route::controller(SettingsController::class)->group(function() {
    route::get('/settings', 'index');
+   route::get('/settings/emailReset', 'email');
 });

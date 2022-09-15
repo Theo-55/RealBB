@@ -33,6 +33,9 @@ app.component('workout-create', WorkoutSave);
 import SettingsIndex from './components/user/settings/index.vue';
 app.component('settings-index', SettingsIndex);
 
+import ChangeEmail from './components/user/settings/emailReset.vue';
+app.component('change-email', ChangeEmail);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

@@ -23,7 +23,7 @@ class SettingsController extends Controller
     {
         $user_email = auth()->user();
         return view('emailReset', [
-            'user-email' => $user_email->email
+            'user_email' => $user_email->email
         ]);
     }
 }

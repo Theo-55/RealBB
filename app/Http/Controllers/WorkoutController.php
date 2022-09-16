@@ -24,7 +24,6 @@ class WorkoutController extends Controller
 
     public function save(Request $request)
     {
-
             $id = Auth::id();
             $workout = new Workout(array(
                 'user_id' => $id,
@@ -34,9 +33,21 @@ class WorkoutController extends Controller
             ));
             $workout->save();
 
+//        $request->collect($request->exercises)->each(function ($exercise){
 
-            $exercises = collect($request->exercise);
-            Log::info($exercises);
+
+                $data = $request->exercises->all();
+                foreach ($data as $key => $value){
+                    $workout_id = Workout::latest('workout_id')->first();
+                    $exercise = new Exercise(array(
+                        'name' => $exercise['name'],
+                        'sets' => $exercise['sets'],
+                        'reps' => $exercise['reps'],
+                        'workout_id' => $workout_id ));
+                    $exercise->save();
+                }
+
+
 
             return redirect('/workouts');
     }

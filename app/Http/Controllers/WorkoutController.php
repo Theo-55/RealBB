@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 
+
 class WorkoutController extends Controller
 {
     //
@@ -25,30 +26,27 @@ class WorkoutController extends Controller
     public function save(Request $request)
     {
             $id = Auth::id();
-            $workout = new Workout(array(
+            $workout = Workout::create(array(
                 'user_id' => $id,
                 'date' => $request->entries['date'],
                 'muscle_group' => $request->entries['group'],
                 'duration_hrs' => $request->entries['duration']
             ));
-            $workout->save();
 
-//        $request->collect($request->exercises)->each(function ($exercise){
-
-
-                $data = $request->exercises->all();
-                foreach ($data as $key => $value){
-                    $workout_id = Workout::latest('workout_id')->first();
-                    $exercise = new Exercise(array(
-                        'name' => $exercise['name'],
-                        'sets' => $exercise['sets'],
-                        'reps' => $exercise['reps'],
-                        'workout_id' => $workout_id ));
-                    $exercise->save();
-                }
-
-
-
+            collect($request->exercises)->each(function ($exercise){
+                $exercise = new Exercise(array(
+                'name' => $exercise['name'],
+                'sets' => $exercise['sets'],
+                'reps' => $exercise['reps'],
+                'workout_id' => '1' //fix to get latest ID
+            ));
+                $exercise->save();
+        });
+//            $data = $request->exercises;
+//                foreach ($data as $key => $value){
+//
+//                    $exercise->save();
+//                }
             return redirect('/workouts');
     }
 

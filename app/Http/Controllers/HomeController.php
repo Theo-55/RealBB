@@ -26,10 +26,18 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $workouts = Workout::where('user_id', $user->id)->count();
+
+
         return view('home', [
             'user' => $user->name,
             'workouts' => $workouts
 
         ]);
+    }
+
+
+    public function getD()
+    {
+
     }
 }

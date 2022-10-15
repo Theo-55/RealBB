@@ -67,7 +67,7 @@ export default{
              }).then(
                      response => window.location.href = '/workouts'
                  ).catch(
-                     error => console.log(error)
+                     error => console.log(error) 
              )
          },
 

@@ -26,18 +26,12 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $workouts = Workout::where('user_id', $user->id)->count();
-
-
+        $elapsedTime = $user->workouts->sum('duration_hrs');
         return view('home', [
             'user' => $user->name,
-            'workouts' => $workouts
-
+            'workouts' => $workouts,
+            'time' => $elapsedTime
         ]);
     }
 
-
-    public function getD()
-    {
-
-    }
 }

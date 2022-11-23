@@ -13,7 +13,7 @@ class SettingsController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $photoString = auth()->user()->image;
+        $photoString = $user->image;
         return view('settings', [
             'user' => $user->name,
             'profile' => $photoString
@@ -28,7 +28,7 @@ class SettingsController extends Controller
         ]);
     }
 
-    public function storeImage(Request $request)
+    public function store(Request $request)
     {
 
         $this->validate($request, array(
@@ -41,6 +41,7 @@ class SettingsController extends Controller
             $request->image->storeAs('images',$filename,'public');
             Auth()->user()->update(['image'=>$filename]);
         }
+        return response();
 
     }
 }

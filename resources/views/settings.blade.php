@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <settings-index user="{{$user}}" profile="{{ asset('storage/') }}" ></settings-index>
+    <settings-index user="{{$user}}" profile="asset('/storage/images/'.{{$profile}}" ></settings-index>
 
 
 

@@ -34,5 +34,5 @@ Route::controller(WorkoutController::class)->group(function () {
 Route::controller(SettingsController::class)->group(function() {
    route::get('/settings', 'index');
    route::get('/settings/emailReset', 'email');
-   route::post('settings/uploadProfile','storeImage');
+   route::post('settings/uploadProfile','store');
 });

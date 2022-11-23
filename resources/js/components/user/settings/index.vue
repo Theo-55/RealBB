@@ -74,8 +74,7 @@ export default {
 
                 axios.post('/settings/uploadProfile', formData, config)
                     .then(function (response) {
-                        currentObj.success = response.data.success;
-                        currentObj.filename = "";
+                        window.location.reload()
                     })
                     .catch(function (error) {
                         currentObj.output = error;

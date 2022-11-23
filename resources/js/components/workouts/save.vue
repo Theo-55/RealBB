@@ -17,11 +17,11 @@
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Duration</label>
                     <select class="form-select appearance-none block w-2/3 px-3 py-1.5 text-base font-normal text-white bg-gray-600 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-600 focus:border-blue-600 focus:outline-none" v-model="formData.entries.duration" aria-label="Default select example">
                         <option selected >Select Hours</option>
-                        <option value="1">1/2</option>
-                        <option value="2">1</option>
-                        <option value="3">1.5</option>
-                        <option value="4">2</option>
-                        <option value="5">2.5</option>
+                        <option value="0.5">1/2</option>
+                        <option value="1">1</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
                     </select>
                 </div>
 
@@ -38,6 +38,7 @@
             </div>
         <button @click="sendExercise" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mx-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
         <button @click="addRow" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-3">Add Exercise</button>
+        <button @click="deleteExercise" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-3">Delete Exercise</button>
     </div>
 </template>
 <script>
@@ -67,7 +68,7 @@ export default{
              }).then(
                      response => window.location.href = '/workouts'
                  ).catch(
-                     error => console.log(error) 
+                     error => console.log(error)
              )
          },
 
@@ -77,7 +78,11 @@ export default{
                 sets: "",
                 reps: ""
             })
-        }
+        },
+         deleteExercise() {
+             this.formData.exercises.slice();
+         }
+
     },
     components: {
         UserNav,

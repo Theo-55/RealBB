@@ -10,10 +10,10 @@
                 <a @click="gotoWorkouts" class=" flex mt-1 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4 text-">
                     Workouts
                 </a>
-                <a @click="" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
+                <a class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white mr-4">
                     Notes
                 </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white">
+                <a @click="goToMeals" class="block mt-4 lg:inline-block lg:mt-0 text-black-300 hover:text-white">
                     Meals
                 </a>
             </div>
@@ -39,6 +39,9 @@ export default {
         },
         goToSettings(){
             window.location.href = '/settings';
+        },
+        goToMeals(){
+            window.location.href = '/meals';
         }
     },
     mounted() {

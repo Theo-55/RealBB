@@ -3,7 +3,7 @@
         <user-nav></user-nav>
     </div>
     <div class="relative mt-24 bg-gray-500 w-3/4 mx-auto h-full rounded">
-            <div class="grid gap-6 mb-6 md:grid-cols-3 ">
+            <div class="grid gap-6 mb-6 md:grid-cols-5 ">
 
                 <div>
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Date</label>
@@ -11,11 +11,19 @@
                 </div>
                 <div>
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Muscle Group</label>
-                    <input type="text" id="reps" v-model="formData.entries.group" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+                    <input type="text" v-model="formData.entries.group" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
                 </div>
                 <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Duration</label>
-                    <select class="form-select appearance-none block w-2/3 px-3 py-1.5 text-base font-normal text-white bg-gray-600 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-600 focus:border-blue-600 focus:outline-none" v-model="formData.entries.duration" aria-label="Default select example">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Workout Label</label>
+                    <input type="text"  v-model="formData.entries.keyword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+                </div>
+                 <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Workout Location</label>
+                    <input type="text"  v-model="formData.entries.location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="">
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Duration</label>
+                    <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-white bg-gray-600 bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-gray-600 focus:border-blue-600 focus:outline-none" v-model="formData.entries.duration" aria-label="Default select example">
                         <option selected >Select Hours</option>
                         <option value="0.5">1/2</option>
                         <option value="1">1</option>
@@ -53,6 +61,8 @@ export default{
                 entries: {
                     date: "",
                     group: "",
+                    keyword: "",
+                    location: "",
                     duration: ""
                 },
                 exercises: []

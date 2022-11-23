@@ -38,7 +38,7 @@ class WorkoutController extends Controller
                 'name' => $exercise['name'],
                 'sets' => $exercise['sets'],
                 'reps' => $exercise['reps'],
-                'workout_id' => '1' //fix to get latest ID
+                'workout_id' => '1' //fix to get latest IDs
             ));
                 $exercise->save();
         });
@@ -63,6 +63,22 @@ class WorkoutController extends Controller
             $workout = Workout::find($request->input('id'));
             $workout->delete();
             return response('Workout Deleted', 200);
+
+    }
+
+    public function keySearch(Request $request)
+    {
+
+        $id = Auth::id();
+        $validated = $request->validate([
+            'keyword' => 'required'
+        ]);
+
+        $workouts = Workout::where('keyword', $request->keyword)
+                        ->ordeBy('date')
+                        ->get();
+
+        return response($workouts);
 
     }
 

@@ -36,6 +36,9 @@ app.component('settings-index', SettingsIndex);
 import ChangeEmail from './components/user/settings/emailReset.vue';
 app.component('change-email', ChangeEmail);
 
+import MealIndex from './components/meals/index.vue';
+app.component('meals-index', MealIndex);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

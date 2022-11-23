@@ -13,6 +13,8 @@ class Workout extends Model
         'user_id',
         'date',
         'muscle_group',
+        'keyword',
+        'location',
         'duration_hrs'
     ]);
 

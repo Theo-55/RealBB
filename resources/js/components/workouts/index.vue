@@ -24,7 +24,9 @@ import Search from './partials/Search.vue'
 export default {
     data(){
         return{
-            keyword: ""
+            searchData: {
+                keyword: ""
+            }
         }
     },
 
@@ -36,10 +38,14 @@ export default {
         },
         keySearch(e)
         {
-            this.keyword = e
-            axios.get('/searchWorkout', this.keyword)
-
-            // .then( function(response))
+            this.searchData.keyword = e
+            axios.post('/searchWorkout', this.searchData)
+                .then(( response) => {
+                    console.log(response)
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
         }
     }
 }

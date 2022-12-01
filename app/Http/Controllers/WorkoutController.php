@@ -7,6 +7,7 @@ use App\models\Exercise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -66,17 +67,16 @@ class WorkoutController extends Controller
 
     public function keySearch(Request $request)
     {
-
         $id = Auth::id();
         $validated = $request->validate([
             'keyword' => 'required'
         ]);
+        $workouts = DB::table('workouts')
+                     ->where('keyword', $request['keyword'])
+                     ->orderBy('date', 'desc')
+                     ->get();
 
-        $workouts = Workout::where('keyword', $request->keyword)
-                        ->ordeBy('date')
-                        ->get();
-
-        return response($workouts);
+        return response()->json($workouts);
 
     }
 

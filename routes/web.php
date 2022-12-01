@@ -30,7 +30,7 @@ Route::controller(WorkoutController::class)->group(function () {
     Route::post('/workouts/create/save', 'save');
     Route::get('/workouts/capture', 'getAll');
     Route::delete('/workouts/delete', 'delete');
-    Route::get('/searchWorkout', 'keySearch');
+    Route::post('/searchWorkout', 'keySearch');
 });
 
 Route::controller(SettingsController::class)->group(function() {

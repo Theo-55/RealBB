@@ -30,7 +30,9 @@ class WorkoutController extends Controller
                 'user_id' => $id,
                 'date' => $request->entries['date'],
                 'muscle_group' => $request->entries['group'],
-                'duration_hrs' => $request->entries['duration']
+                'duration_hrs' => $request->entries['duration'],
+                'keyword' => $request->entries['keyword'],
+                'location' => $request->entries['location']
             ));
 
             collect($request->exercises)->each(function ($exercise){
@@ -42,11 +44,7 @@ class WorkoutController extends Controller
             ));
                 $exercise->save();
         });
-//            $data = $request->exercises;
-//                foreach ($data as $key => $value){
-//
-//                    $exercise->save();
-//                }
+
             return redirect('/workouts');
     }
 

@@ -13,10 +13,8 @@
 <script>
 import WorkoutCard from '/resources/js/components/workouts/partials/WorkoutCard.vue'
 export default {
-
     components: {
         WorkoutCard
     }
-
 }
 </script>

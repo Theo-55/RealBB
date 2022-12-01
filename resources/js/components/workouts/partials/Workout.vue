@@ -4,7 +4,7 @@
         class="relative flex flex-col px-4 pt-24 pb-12 font-sans text-gray-700 bg-gray-400 sm:px-6 lg:px-8"
     >
         <div class="flex-1 space-y-8">
-                <workout-card ></workout-card>
+                <workout-card :workouts="workouts"></workout-card>
         </div>
 
     </div>
@@ -15,6 +15,7 @@ import WorkoutCard from '/resources/js/components/workouts/partials/WorkoutCard.
 export default {
     components: {
         WorkoutCard
-    }
+    },
+    props: ['workouts']
 }
 </script>

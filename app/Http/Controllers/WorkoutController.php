@@ -11,12 +11,16 @@ use Illuminate\Support\Facades\DB;
 
 
 
+
 class WorkoutController extends Controller
 {
     //
     public function index()
     {
-        return view('workouts.index');
+        $user = auth()->user();
+        return view('workouts.index', [
+            'workouts' => Workout::where('user_id', $user->id)->get()
+        ]);
     }
 
     public function create()

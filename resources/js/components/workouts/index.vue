@@ -10,28 +10,25 @@
             </div>
         </div>
         <div class="relative pt-5 w-50 mx-auto">
-            <!-- this section for the workout table, adding after create is completed -->
-            <workout></workout>
+            <workout :workouts="workouts" ></workout>
         </div>
     </div>
-
-
 </template>
 <script>
 import UserNav from "../user/UserNav.vue";
 import Workout from '../workouts/partials/Workout.vue'
 import Search from './partials/Search.vue'
 export default {
+        props: ['workouts'],
     data(){
         return{
             searchData: {
                 keyword: ""
-            }
+            },
+            searchResults: []
         }
     },
-
     components: {UserNav, Workout, Search},
-
     methods: {
         goToCreate(){
             window.location.href = '/workouts/create';
@@ -41,12 +38,15 @@ export default {
             this.searchData.keyword = e
             axios.post('/searchWorkout', this.searchData)
                 .then(( response) => {
-                    console.log(response)
+                    this.searchResults = response.data
                 })
                 .catch(function (error) {
                     console.log(error)
                 })
         }
+    },
+    mounted() {
+        console.log(this.allWorkouts)
     }
 }
 </script>
